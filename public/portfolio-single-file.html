@@ -1,0 +1,2245 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auliana Miendy — Video Editor & Motion Graphic Designer</title>
+  <meta name="description" content="Portofolio resmi Auliana Miendy. Video Editor & Motion Graphic Designer berpengalaman 8+ tahun di broadcast media nasional (RCTI+, Matrix TV) dan digital brand campaigns (Sosro, Somethinc, Sidomuncul, Noice, Allianz).">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config Custom Colors -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            mainBg: '#FAFAFA',
+            cardBg: '#FFFFFF',
+            borderSubtle: '#E2E8F0',
+            lilacSoft: '#E8D8F4',
+            lilacAccent: '#C8ACD6',
+            lilacHover: '#B593C5',
+            purpleDeep: '#4A2E80',
+            purpleDark: '#3C1361',
+            charcoal: '#2D3748',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- CSS Internal Tambahan -->
+  <style>
+    body {
+      background-color: #FAF9FC !important;
+      background-image: 
+        radial-gradient(ellipse 65% 45% at 10% -5%, rgba(232, 216, 244, 0.42) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 40% at 90% 18%, rgba(254, 243, 199, 0.40) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 50% at 8% 50%, rgba(254, 240, 138, 0.22) 0%, transparent 60%),
+        radial-gradient(ellipse 65% 50% at 92% 85%, rgba(232, 216, 244, 0.38) 0%, transparent 60%) !important;
+      background-attachment: fixed !important;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF9FC;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C8ACD6;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B593C5;
+    }
+
+    ::selection {
+      background-color: #E8D8F4;
+      color: #3C1361;
+    }
+
+    /* Video Portfolio Card: Smooth Zoom & High Contrast Overlay */
+    .portfolio-item {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease !important;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-6px) !important;
+      box-shadow: 0 20px 35px -10px rgba(60, 19, 97, 0.16) !important;
+      border-color: rgba(245, 158, 11, 0.75) !important;
+    }
+    .portfolio-item img {
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .portfolio-item:hover img {
+      transform: scale(1.08) !important;
+      filter: brightness(1.05) !important;
+    }
+    .portfolio-item .relative.aspect-video::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      z-index: 5;
+    }
+    .portfolio-item:hover .relative.aspect-video::after {
+      border-color: rgba(251, 191, 36, 0.6);
+    }
+    .portfolio-item .relative.aspect-video > div {
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Staggered Fade-in Animation for Portfolio Cards */
+    @keyframes cardFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(28px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .portfolio-item {
+      animation: cardFadeIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .portfolio-item:nth-child(1) { animation-delay: 0.05s; }
+    .portfolio-item:nth-child(2) { animation-delay: 0.12s; }
+    .portfolio-item:nth-child(3) { animation-delay: 0.19s; }
+    .portfolio-item:nth-child(4) { animation-delay: 0.26s; }
+    .portfolio-item:nth-child(5) { animation-delay: 0.33s; }
+    .portfolio-item:nth-child(6) { animation-delay: 0.40s; }
+    .portfolio-item:nth-child(7) { animation-delay: 0.47s; }
+    .portfolio-item:nth-child(8) { animation-delay: 0.54s; }
+    .portfolio-item:nth-child(9) { animation-delay: 0.61s; }
+    .portfolio-item:nth-child(n+10) { animation-delay: 0.68s; }
+    .portfolio-item:hover .w-12.h-12 {
+      transform: scale(1.15) !important;
+      background-color: #F59E0B !important;
+      color: #020617 !important;
+      box-shadow: 0 0 24px rgba(245, 158, 11, 0.55) !important;
+    }
+    .portfolio-item:hover span.bg-lilacSoft {
+      background-color: #FDE68A !important;
+      color: #020617 !important;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .modal-enter {
+      animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Scroll-triggered reveal animations via Intersection Observer */
+    .reveal-scroll {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="text-charcoal font-sans antialiased min-h-screen flex flex-col selection:bg-lilacSoft selection:text-purpleDark">
+
+  <!-- ========================================== -->
+  <!-- 1. HEADER / NAVBAR                         -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-borderSubtle transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-8">
+      
+      <!-- Brand Logo / Personal Identity -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-[#3C1361] flex items-center justify-center text-amber-300 font-extrabold text-base border border-[#52257d] shadow-sm">
+          AM
+        </div>
+        <div>
+          <span class="text-lg font-bold text-purpleDark tracking-tight block leading-none">Auliana Miendy</span>
+          <span class="text-xs text-charcoal/60 font-medium">Video Editor &amp; Motion Graphic Designer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-charcoal">
+        <a href="#home" class="hover:text-purpleDeep transition-colors">Home</a>
+        <a href="#work" class="hover:text-purpleDeep transition-colors">Portfolio</a>
+        <a href="#experience" class="hover:text-purpleDeep transition-colors">Experience</a>
+        <a href="#skills" class="hover:text-purpleDeep transition-colors">Core Skills</a>
+        <a href="#contact" class="hover:text-purpleDeep transition-colors">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="/assets/aistudio/Auliana_Miendy_CV_Final_e84e794f.pdf" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-bold text-slate-900 bg-amber-400 hover:bg-amber-300 rounded-xl transition-all shadow-xs flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>Resume CV</span>
+        </a>
+        <a href="#contact" class="px-5 py-2.5 text-xs font-semibold tracking-wide text-white bg-purpleDeep rounded-xl hover:bg-purpleDark transition-all duration-200 shadow-sm hover:shadow active:scale-95">
+          Let's Collaborate
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 text-charcoal hover:text-purpleDeep focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden border-b border-borderSubtle bg-white px-6 py-4 space-y-3">
+      <a href="#home" class="block py-2 text-sm font-medium text-charcoal hover:text-purpleDeep mobile-link">Home</a>
+      <a href="#work" class="block py-2 text-sm font-medium text-charcoal hover:text-purpleDeep mobile-link">Portfolio &amp; Projects</a>
+      <a href="#experience" class="block py-2 text-sm font-medium text-charcoal hover:text-purpleDeep mobile-link">Work Experience (RCTI+, Matrix TV)</a>
+      <a href="#skills" class="block py-2 text-sm font-medium text-charcoal hover:text-purpleDeep mobile-link">Core Skills &amp; Software</a>
+      <a href="#contact" class="block py-2 text-sm font-medium text-charcoal hover:text-purpleDeep mobile-link">Contact</a>
+      <div class="pt-2 flex flex-col gap-2">
+        <a href="/assets/aistudio/Auliana_Miendy_CV_Final_e84e794f.pdf" target="_blank" class="block text-center py-2.5 text-xs font-semibold text-purpleDeep bg-lilacSoft rounded-xl mobile-link">
+          Download Official CV (PDF)
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========================================== -->
+  <!-- 2. HERO SECTION                            -->
+  <!-- ========================================== -->
+  <section id="home" class="relative pt-12 pb-20 md:pt-16 md:pb-24 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Kolom Kiri: Teks & Headline -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 text-white text-xs font-medium shadow-xs">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+            </span>
+            <span>Available for Freelance &amp; Projects</span>
+            <span class="text-slate-600">·</span>
+            <span class="text-amber-300 font-medium">Jakarta, ID</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#1E1235] tracking-tight leading-[1.12]">
+            Crafting Visual Stories That <span class="relative inline-block"><span class="relative z-10 text-[#3C1361]">Engage &amp; Convert</span><span class="absolute bottom-1.5 left-0 w-full h-3 bg-amber-300/40 -z-0 rounded-sm"></span></span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-charcoal/85 leading-relaxed max-w-xl">
+            Creative Video Editor &amp; Motion Graphic Designer dengan pengalaman <strong>lebih dari 8 tahun</strong> di industri siaran televisi nasional (RCTI+, Matrix TV), campaign digital, dan visual storytelling untuk brand terkemuka (Sosro, Somethinc, Sidomuncul, Noice, Allianz).
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-1">
+            <a href="#work" class="px-7 py-3.5 text-sm font-bold text-white bg-[#3C1361] hover:bg-[#2A0845] rounded-xl transition-all duration-200 shadow-sm hover:shadow-md flex items-center gap-2 active:scale-95">
+              <span>Lihat Proyek Pilihan</span>
+              <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            
+            <button onclick="openLightbox('https://www.youtube.com/embed/W6IhOb_9q9w?autoplay=1', 'Auliana Miendy Official Showreel', 'Broadcast Promotion & Motion Highlights')" class="px-6 py-3.5 text-sm font-semibold text-slate-800 bg-white hover:bg-amber-50/50 border border-slate-200 hover:border-amber-300 rounded-xl transition-all duration-200 flex items-center gap-2.5 cursor-pointer shadow-sm active:scale-95">
+              <div class="w-5 h-5 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center shrink-0">
+                <svg class="w-2.5 h-2.5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span>Putar Showreel Resmi</span>
+            </button>
+          </div>
+
+          <!-- Quick Trust Badges -->
+          <div class="pt-2 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-600 font-medium">
+            <span class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+              Video Editor &amp; Motion Graphic Designer
+            </span>
+            <span class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+              National TV Broadcast Standard
+            </span>
+            <span class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+              D4 Televisi &amp; Film (ISBI Bandung)
+            </span>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Showreel Card dengan Thumbnail ASLI dari Video YouTube -->
+        <div class="lg:col-span-5">
+          <div class="relative bg-white p-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:border-amber-300/60">
+            <div class="relative aspect-video rounded-xl overflow-hidden bg-slate-900 group cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/W6IhOb_9q9w?autoplay=1', 'Auliana Miendy Official Showreel', 'Broadcast Promotion & Motion Highlights')">
+              <!-- Thumbnail Langsung dari Video YouTube W6IhOb_9q9w -->
+              <img 
+                src="https://img.youtube.com/vi/W6IhOb_9q9w/maxresdefault.jpg" 
+                onerror="this.src='https://img.youtube.com/vi/W6IhOb_9q9w/hqdefault.jpg'"
+                alt="Auliana Miendy Official Showreel Frame" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-black/15 to-black/30 flex flex-col justify-between p-5">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-1 rounded-md bg-amber-400 text-slate-950 text-[10px] font-bold tracking-wider uppercase shadow-xs">
+                    Official Showreel
+                  </span>
+                  <span class="px-2 py-0.5 rounded bg-black/40 text-amber-300 text-[11px] font-mono font-medium">
+                    02:00
+                  </span>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                  <div class="w-12 h-12 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-amber-300 transition-all duration-300">
+                    <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                  <div class="text-white">
+                    <p class="text-sm font-bold leading-tight">Putar Showreel 2026</p>
+                    <p class="text-xs text-slate-200">Broadcast Promo &amp; Digital Motion Highlights</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-3 flex items-center justify-between text-xs text-slate-500 px-1 font-medium">
+              <span>Link: youtu.be/W6IhOb_9q9w</span>
+              <span class="text-[#3C1361] hover:text-amber-600 font-bold hover:underline cursor-pointer transition-colors" onclick="openLightbox('https://www.youtube.com/embed/W6IhOb_9q9w?autoplay=1', 'Auliana Miendy Official Showreel', 'Broadcast Promotion & Motion Highlights')">Tonton Video &rarr;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 3. PORTFOLIO (THUMBNAIL ASLI DARI VIDEO)   -->
+  <!-- ========================================== -->
+  <section id="work" class="py-20 bg-white/60 backdrop-blur-xs border-y border-borderSubtle">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold mb-2">
+            <svg class="w-3.5 h-3.5 fill-current text-purpleDeep" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Featured Creative Works
+          </span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-purpleDark tracking-tight">Portofolio &amp; Pengalaman Proyek</h2>
+          <p class="text-sm text-charcoal/70 mt-2 max-w-xl">Eksplorasi ragam karya komersial brand ternama, materi promosi siaran televisi nasional, dan konten video performa tinggi dengan storytelling visual yang kuat dan memikat audiens.</p>
+        </div>
+
+      </div>
+
+      <!-- Filter Tabs & Search Bar Container -->
+      <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 p-2.5 bg-mainBg rounded-2xl border border-borderSubtle mb-4">
+        <!-- Filter Tab Buttons -->
+        <div class="flex flex-wrap items-center gap-1.5 text-xs font-semibold">
+          <button onclick="filterPortfolio('all')" class="filter-btn active px-3.5 py-2 rounded-lg transition-all duration-200 bg-white text-purpleDark shadow-sm font-bold" data-category="all">
+            All Projects
+          </button>
+          <button onclick="filterPortfolio('broadcast')" class="filter-btn px-3.5 py-2 rounded-lg transition-all duration-200 text-charcoal/70 hover:text-purpleDark" data-category="broadcast">
+            Broadcast (RCTI+)
+          </button>
+          <button onclick="filterPortfolio('commercial')" class="filter-btn px-3.5 py-2 rounded-lg transition-all duration-200 text-charcoal/70 hover:text-purpleDark" data-category="commercial">
+            Commercial Campaigns
+          </button>
+          <button onclick="filterPortfolio('shortform')" class="filter-btn px-3.5 py-2 rounded-lg transition-all duration-200 text-charcoal/70 hover:text-purpleDark" data-category="shortform">
+            Short-Form Reels
+          </button>
+          <button onclick="filterPortfolio('motion')" class="filter-btn px-3.5 py-2 rounded-lg transition-all duration-200 text-charcoal/70 hover:text-purpleDark" data-category="motion">
+            Motion Graphics
+          </button>
+          <button onclick="filterPortfolio('audio')" class="filter-btn px-3.5 py-2 rounded-lg transition-all duration-200 text-charcoal/70 hover:text-purpleDark" data-category="audio">
+            Radio &amp; Audio Sync
+          </button>
+        </div>
+
+        <!-- Interactive Search Bar -->
+        <div class="relative flex-1 lg:max-w-xs xl:max-w-sm">
+          <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input
+            type="text"
+            id="portfolioSearchInput"
+            oninput="handlePortfolioSearch()"
+            placeholder="Cari judul, klien, software (After Effects)..."
+            class="w-full pl-9.5 pr-8 py-2 text-xs bg-white rounded-xl border border-borderSubtle focus:border-purpleDeep focus:ring-2 focus:ring-lilacSoft outline-none text-charcoal placeholder:text-slate-400 transition-all"
+          />
+          <button
+            id="clearSearchBtn"
+            onclick="clearPortfolioSearch()"
+            class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-slate-400 hover:text-purpleDark rounded-full hover:bg-slate-100 transition-colors"
+            title="Hapus pencarian"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Keyword Suggestions -->
+      <div class="flex flex-wrap items-center justify-between gap-3 text-xs text-charcoal/70 px-1 mb-8">
+        <div class="flex flex-wrap items-center gap-1.5">
+          <span class="font-medium text-slate-400">Pencarian populer:</span>
+          <button onclick="setSearchKeyword('After Effects')" class="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white border border-borderSubtle hover:border-purpleDeep hover:text-purpleDark transition-all cursor-pointer">After Effects</button>
+          <button onclick="setSearchKeyword('Premiere Pro')" class="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white border border-borderSubtle hover:border-purpleDeep hover:text-purpleDark transition-all cursor-pointer">Premiere Pro</button>
+          <button onclick="setSearchKeyword('RCTI+')" class="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white border border-borderSubtle hover:border-purpleDeep hover:text-purpleDark transition-all cursor-pointer">RCTI+</button>
+          <button onclick="setSearchKeyword('Somethinc')" class="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white border border-borderSubtle hover:border-purpleDeep hover:text-purpleDark transition-all cursor-pointer">Somethinc</button>
+          <button onclick="setSearchKeyword('DaVinci Resolve')" class="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white border border-borderSubtle hover:border-purpleDeep hover:text-purpleDark transition-all cursor-pointer">DaVinci Resolve</button>
+          <button onclick="setSearchKeyword('CapCut')" class="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-white border border-borderSubtle hover:border-purpleDeep hover:text-purpleDark transition-all cursor-pointer">CapCut</button>
+        </div>
+        <div id="searchResultsCount" class="text-xs font-semibold text-purpleDark hidden"></div>
+      </div>
+
+      <!-- Video Grid Items: Setiap kartu memuat thumbnail asli dari videonya -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolioGrid">
+        
+        <!-- ITEM 1: NGOBROL BARENG CAST PAY LATER 2 (Video: -hYEVL8QUiQ) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="commercial broadcast">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/-hYEVL8QUiQ?autoplay=1', 'NGOBROL BARENG CAST PAY LATER 2', 'Video Editor · Vision+ / Pay Later 2', false)">
+            <img 
+              src="https://img.youtube.com/vi/-hYEVL8QUiQ/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/-hYEVL8QUiQ/hqdefault.jpg'"
+              alt="NGOBROL BARENG CAST PAY LATER 2 Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Talkshow &amp; Cast Interview
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Vision+ / Pay Later 2</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-[11px] font-bold text-purpleDeep uppercase tracking-wider block mb-1">Video Editor</span>
+            <h3 class="text-base font-bold text-purpleDark group-hover:text-purpleDeep transition-colors">NGOBROL BARENG CAST PAY LATER 2</h3>
+            <div class="mt-4 pt-3 border-t border-borderSubtle flex items-center justify-between text-xs text-charcoal/60">
+              <span>Premiere Pro · After Effects · Photoshop</span>
+              <span class="text-purpleDeep font-semibold cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/-hYEVL8QUiQ?autoplay=1', 'NGOBROL BARENG CAST PAY LATER 2', 'Video Editor · Vision+ / Pay Later 2', false)">Watch Video &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 2: Tika, Umar, dan Jefri yang bakal bikin Pay Later 2 jadi makin seru!! 😍❤️ (Video: y1Jx_1LhcDQ) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="shortform commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/y1Jx_1LhcDQ?autoplay=1', 'Tika, Umar, dan Jefri - Pay Later 2', 'Video Editor · Vision+ / Pay Later 2', true)">
+            <img 
+              src="https://img.youtube.com/vi/y1Jx_1LhcDQ/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/y1Jx_1LhcDQ/hqdefault.jpg'"
+              alt="Tika, Umar, dan Jefri Pay Later 2 Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Short-Form Reels (9:16)
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Vision+ / Pay Later 2</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-[11px] font-bold text-purpleDeep uppercase tracking-wider block mb-1">Video Editor</span>
+            <h3 class="text-base font-bold text-purpleDark group-hover:text-purpleDeep transition-colors">Tika, Umar, dan Jefri yang bakal bikin Pay Later 2 jadi makin seru!! 😍❤️</h3>
+            <div class="mt-4 pt-3 border-t border-borderSubtle flex items-center justify-between text-xs text-charcoal/60">
+              <span>Premiere Pro · CapCut · After Effects</span>
+              <span class="text-purpleDeep font-semibold cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/y1Jx_1LhcDQ?autoplay=1', 'Tika, Umar, dan Jefri - Pay Later 2', 'Video Editor · Vision+ / Pay Later 2', true)">Watch Video &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 3: Amanda Manopo dan Kenny Austin adu kompak di THIS OR THAT CHALLENGE 🤭💗 (Video: TgQbbOHajjE) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="shortform commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/TgQbbOHajjE?autoplay=1', 'Amanda Manopo &amp; Kenny Austin - This or That Challenge', 'Video Editor · Vision+ / Pay Later 2', true)">
+            <img 
+              src="https://img.youtube.com/vi/TgQbbOHajjE/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/TgQbbOHajjE/hqdefault.jpg'"
+              alt="Amanda Manopo dan Kenny Austin Challenge Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Challenge Reels (9:16)
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Vision+ / Pay Later 2</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-[11px] font-bold text-purpleDeep uppercase tracking-wider block mb-1">Video Editor</span>
+            <h3 class="text-base font-bold text-purpleDark group-hover:text-purpleDeep transition-colors">Amanda Manopo dan Kenny Austin adu kompak di THIS OR THAT CHALLENGE 🤭💗</h3>
+            <div class="mt-4 pt-3 border-t border-borderSubtle flex items-center justify-between text-xs text-charcoal/60">
+              <span>Premiere Pro · CapCut · After Effects</span>
+              <span class="text-purpleDeep font-semibold cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/TgQbbOHajjE?autoplay=1', 'Amanda Manopo &amp; Kenny Austin - This or That Challenge', 'Video Editor · Vision+ / Pay Later 2', true)">Watch Video &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+                <!-- ITEM 4: ADLIBS RADIO - PAY LATER 2 (Video: -hUiJsf8Wxk) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="audio shortform commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/-hUiJsf8Wxk?autoplay=1', 'ADLIBS RADIO - PAY LATER 2', 'Video Editor · Radio &amp; Audio Sync', true)">
+            <img 
+              src="https://img.youtube.com/vi/-hUiJsf8Wxk/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/-hUiJsf8Wxk/hqdefault.jpg'"
+              alt="ADLIBS RADIO - PAY LATER 2 Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Radio &amp; Audio Sync (9:16)
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Radio Adlibs &amp; Audio Sync</span>
+            </div>
+          </div>
+
+        <!-- ITEM 5: PADEL (Video: yQLmOVdjRQs) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="shortform commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/yQLmOVdjRQs?autoplay=1', 'PADEL', 'Sports Reels &amp; Lifestyle', true)">
+            <img 
+              src="https://img.youtube.com/vi/yQLmOVdjRQs/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/yQLmOVdjRQs/hqdefault.jpg'"
+              alt="PADEL Sports Reels Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Sports Reels (9:16)
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Sports &amp; Lifestyle</span>
+            </div>
+          </div>
+
+        <!-- ITEM 6: GREETING COIVNECT 02 (Video: yHIzyBAvToM) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="shortform commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/yHIzyBAvToM?autoplay=1', 'GREETING COIVNECT 02', 'Short-Form Greeting · COIVNECT', true)">
+            <img 
+              src="https://img.youtube.com/vi/yHIzyBAvToM/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/yHIzyBAvToM/hqdefault.jpg'"
+              alt="GREETING COIVNECT 02 Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Short-Form Greeting (9:16)
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">COIVNECT</span>
+            </div>
+          </div>
+
+        <!-- ITEM 7: GREETING COIVNECT 01 (Video: nzv4SHNXsBA) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="shortform commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/nzv4SHNXsBA?autoplay=1', 'GREETING COIVNECT 01', 'Short-Form Greeting · COIVNECT', true)">
+            <img 
+              src="https://img.youtube.com/vi/nzv4SHNXsBA/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/nzv4SHNXsBA/hqdefault.jpg'"
+              alt="GREETING COIVNECT 01 Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Short-Form Greeting (9:16)
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">COIVNECT</span>
+            </div>
+          </div>
+
+        <!-- ITEM 8: HIGHLIGHT BUTTER BABY x RCTI+ (Video: jTKNGvXybJc) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="shortform broadcast commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/jTKNGvXybJc?autoplay=1', 'HIGHLIGHT BUTTER BABY x RCTI+', 'Short-Form Highlight · RCTI+ x Butter Baby', true)">
+            <img 
+              src="https://img.youtube.com/vi/jTKNGvXybJc/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/jTKNGvXybJc/hqdefault.jpg'"
+              alt="HIGHLIGHT BUTTER BABY RCTI+ Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Short-Form Highlight (9:16)
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+ x Butter Baby</span>
+            </div>
+          </div>
+
+        <!-- ITEM 9: Greeting Tahun Baru 2019 (Video: 73m7qWjkjEg) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="motion shortform broadcast">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/73m7qWjkjEg?autoplay=1', 'Greeting Tahun Baru 2019', 'Motion Graphics Greeting · Matrix TV', true)">
+            <img 
+              src="/assets/thumbnails/greeting-tahun-baru-2019.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/73m7qWjkjEg/hqdefault.jpg'"
+              alt="Greeting Tahun Baru 2019 Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Motion Greeting (9:16)
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Matrix TV</span>
+            </div>
+          </div>
+
+        <!-- ITEM 10: SODOK BOLA SELEB MATCH - REZA OKTAVIAN (Video: ctsVkIFDnvc) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast shortform">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/ctsVkIFDnvc?autoplay=1', 'SODOK BOLA SELEB MATCH - REZA OKTAVIAN', 'Video Editor · RCTI+', false)">
+            <img 
+              src="/assets/thumbnails/sodok-bola-reza.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/ctsVkIFDnvc/hqdefault.jpg'"
+              alt="SODOK BOLA REZA OKTAVIAN Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Celebrity Match Highlight
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 11: SODOK BOLA SELEB MATCH (Video: u_4Aac04YU4) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/u_4Aac04YU4?autoplay=1', 'SODOK BOLA SELEB MATCH', 'Video Editor · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/u_4Aac04YU4/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/u_4Aac04YU4/hqdefault.jpg'"
+              alt="SODOK BOLA SELEB MATCH Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Sports &amp; Entertainment
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 12: GREETING PENTAGON - KMDF 2020 (Video: BzNm55odcKk) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast motion">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/BzNm55odcKk?autoplay=1', 'GREETING PENTAGON - KMDF 2020', 'Video Editor &amp; Motion Designer · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/BzNm55odcKk/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/BzNm55odcKk/hqdefault.jpg'"
+              alt="GREETING PENTAGON Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Music Festival Special
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 13: GREETING (G)I-DLE - KMDF 2020 (Video: uY6Bs604nCE) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast motion">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/uY6Bs604nCE?autoplay=1', 'GREETING (G)I-DLE - KMDF 2020', 'Video Editor &amp; Motion Designer · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/uY6Bs604nCE/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/uY6Bs604nCE/hqdefault.jpg'"
+              alt="GREETING (G)I-DLE Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Music Festival Special
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 14: TVC RCTI+ 2019 (Video: Zt-RVxRj6Jw) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/Zt-RVxRj6Jw?autoplay=1', 'TVC RCTI+ 2019', 'Video Editor · Commercial TVC RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/Zt-RVxRj6Jw/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/Zt-RVxRj6Jw/hqdefault.jpg'"
+              alt="TVC RCTI+ 2019 Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Commercial TVC
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 15: Indonesian Idol - All Juri - RCTI+ (Video: fGyuMLTr3Y0) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/fGyuMLTr3Y0?autoplay=1', 'Indonesian Idol - All Juri - RCTI+', 'Video Editor · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/fGyuMLTr3Y0/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/fGyuMLTr3Y0/hqdefault.jpg'"
+              alt="Indonesian Idol All Juri Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Broadcast Filler
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 16: Indonesian Idol Promo All Juri - RCTI+ (Video: KZ4RhhoOMs0) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast motion">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/KZ4RhhoOMs0?autoplay=1', 'Indonesian Idol Promo All Juri - RCTI+', 'Video Editor &amp; Motion Designer · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/KZ4RhhoOMs0/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/KZ4RhhoOMs0/hqdefault.jpg'"
+              alt="Indonesian Idol Promo All Juri Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Broadcast Promo
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 17: Partnership Recap Ulang Tahun RCTI 30 (Video: WC4WQeU65pY) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/WC4WQeU65pY?autoplay=1', 'Partnership Recap Ulang Tahun RCTI 30', 'Video Editor · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/WC4WQeU65pY/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/WC4WQeU65pY/hqdefault.jpg'"
+              alt="HUT RCTI 30 Recap Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Event &amp; Partnership Recap
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 18: FILLER K UPDATE TREASURE ENGLISH (Video: aoUoGP-YnR0) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast motion">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/aoUoGP-YnR0?autoplay=1', 'FILLER K UPDATE TREASURE ENGLISH', 'Motion Graphic Designer &amp; Editor · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/aoUoGP-YnR0/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/aoUoGP-YnR0/hqdefault.jpg'"
+              alt="FILLER K UPDATE TREASURE Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                K-Pop Feature
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 19: FILLER JKT48 - RCT+ (Video: T9f0hP83KmE) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast motion audio">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/T9f0hP83KmE?autoplay=1', 'FILLER JKT48 - RCT+', 'Video Editor · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/T9f0hP83KmE/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/T9f0hP83KmE/hqdefault.jpg'"
+              alt="FILLER JKT48 RCTI+ Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Broadcast Special
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 20: FILLER IDUL FITRI (RCTI+) 2021 (Video: 0aglThlGjs4) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast motion">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/0aglThlGjs4?autoplay=1', 'FILLER IDUL FITRI (RCTI+) 2021', 'Video Editor · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/0aglThlGjs4/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/0aglThlGjs4/hqdefault.jpg'"
+              alt="FILLER IDUL FITRI RCTI+ 2021 Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Seasonal Broadcast Filler
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 21: Filler RCTI+ promo AT EIGHTEEN (Video: ZHVrzhTV1_E) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast motion">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/ZHVrzhTV1_E?autoplay=1', 'Filler RCTI+ promo AT EIGHTEEN', 'Video Editor &amp; Motion · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/ZHVrzhTV1_E/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/ZHVrzhTV1_E/hqdefault.jpg'"
+              alt="Promo AT EIGHTEEN Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Broadcast Promotion
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 22: FILLER BACKSTAGE+ ITA 2021 GTV RCTI (Video: 29QSeaiyA0g) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/29QSeaiyA0g?autoplay=1', 'FILLER BACKSTAGE+ ITA 2021 GTV RCTI', 'Video Editor · Broadcast (RCTI+)', false)">
+            <img 
+              src="https://img.youtube.com/vi/29QSeaiyA0g/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/29QSeaiyA0g/hqdefault.jpg'"
+              alt="FILLER BACKSTAGE+ ITA 2021 GTV RCTI Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Broadcast (RCTI+)
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 23: FILLER AMANAH WALI (Video: zIRatS975R0) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast motion">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/zIRatS975R0?autoplay=1', 'FILLER AMANAH WALI', 'Video Editor &amp; Motion Graphics · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/zIRatS975R0/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/zIRatS975R0/hqdefault.jpg'"
+              alt="FILLER AMANAH WALI Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Broadcast &amp; Motion Graphics
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 24: FILLER RCTI+ 5 PILAR (Video: 208iT2EDC4Q) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/208iT2EDC4Q?autoplay=1', 'FILLER RCTI+ 5 PILAR', 'Video Editor &amp; Audio Sync · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/208iT2EDC4Q/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/208iT2EDC4Q/hqdefault.jpg'"
+              alt="FILLER RCTI+ 5 PILAR Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Broadcast &amp; Audio Sync
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 25: Filler Aplikasi RCTI+ (Promo Fitur News) (Video: Oe0kiHJNwxs) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast motion">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/Oe0kiHJNwxs?autoplay=1', 'Filler Aplikasi RCTI+ (Promo Fitur News)', 'Motion Graphic &amp; Video Editor · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/Oe0kiHJNwxs/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/Oe0kiHJNwxs/hqdefault.jpg'"
+              alt="Filler Aplikasi RCTI+ News Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Broadcast &amp; Motion Graphic
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 26: ENTAG - untuk Catch Up di aplikasi RCTI+ (Video: NpAbUMVvYhw) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="motion broadcast">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/NpAbUMVvYhw?autoplay=1', 'ENTAG - untuk Catch Up di aplikasi RCTI+', 'Motion Graphic Designer · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/NpAbUMVvYhw/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/NpAbUMVvYhw/hqdefault.jpg'"
+              alt="ENTAG RCTI+ Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Motion Graphics &amp; Broadcast
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 27: Filler Natal RCTI+ "Desember Seru" 2020 (Video: SqDPx9iTZ4A) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="motion broadcast">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/SqDPx9iTZ4A?autoplay=1', 'Filler Natal RCTI+ &quot;Desember Seru&quot; 2020', 'Motion Graphic Designer · RCTI+', false)">
+            <img 
+              src="/assets/thumbnails/filler-natal-2020.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/SqDPx9iTZ4A/hqdefault.jpg'"
+              alt="Filler Natal RCTI+ Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Motion Graphics &amp; Broadcast
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 28: #Teaser Idol Squad - RCTI+ (Video: py5Gh4sur_I) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/py5Gh4sur_I?autoplay=1', '#Teaser Idol Squad - RCTI+', 'Video Editor · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/py5Gh4sur_I/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/py5Gh4sur_I/hqdefault.jpg'"
+              alt="Teaser Idol Squad Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Broadcast (RCTI+)
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">RCTI+</span>
+            </div>
+          </div>
+
+        <!-- ITEM 29: Aplikasi E-Matrix (Matrix TV) (Video: E2qP2F0wyXA) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast motion">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/E2qP2F0wyXA?autoplay=1', 'Aplikasi E-Matrix (Matrix TV)', 'Video Editor · Matrix TV', false)">
+            <img 
+              src="https://img.youtube.com/vi/E2qP2F0wyXA/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/E2qP2F0wyXA/hqdefault.jpg'"
+              alt="Aplikasi E-Matrix Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Broadcast &amp; Motion Graphic
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Matrix TV</span>
+            </div>
+          </div>
+
+        <!-- ITEM 30: Japan Event Trip Promotional Doc (Video: n0w-dbrjVk0) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/n0w-dbrjVk0?autoplay=1', 'Japan Event Trip Promotional Doc', 'Video Editor · Jalankan Media x Jafra', false)">
+            <img 
+              src="/assets/thumbnails/japan-event-trip.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/n0w-dbrjVk0/hqdefault.jpg'"
+              alt="Japan Event Trip Promotional Doc Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Documentary &amp; Event
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Jalankan Media x Jafra</span>
+            </div>
+          </div>
+
+        <!-- ITEM 31: RCTI+ Station ID & Promo (Video: vCfmwOIC09A) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="broadcast">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/vCfmwOIC09A?autoplay=1', 'Station ID (SF) & Program Promos', 'Broadcast Television · RCTI+', false)">
+            <img 
+              src="https://img.youtube.com/vi/vCfmwOIC09A/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/vCfmwOIC09A/hqdefault.jpg'"
+              alt="RCTI+ Promo Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Broadcast Promotion
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">National TV (RCTI+)</span>
+            </div>
+          </div>
+
+        <!-- ITEM 32: Noice Product Feature (Video: 9U_fyjgm-Mk) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="motion">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/9U_fyjgm-Mk?autoplay=1', 'Noice Product Feature Project', 'Client: Mejikuviniu x Noice', false)">
+            <img 
+              src="https://img.youtube.com/vi/9U_fyjgm-Mk/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/9U_fyjgm-Mk/hqdefault.jpg'"
+              alt="Noice Feature Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Motion Graphics
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Mejikuviniu x Noice</span>
+            </div>
+          </div>
+
+        <!-- ITEM 33: Sidomuncul Reels (Video: RRlB66IoxQk) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="shortform">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/RRlB66IoxQk?autoplay=1', 'Sidomuncul Reels Campaign', 'Client: Sidomuncul', true)">
+            <img 
+              src="https://img.youtube.com/vi/RRlB66IoxQk/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/RRlB66IoxQk/hqdefault.jpg'"
+              alt="Sidomuncul Reels Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Short-Form (Reels)
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Client: Sidomuncul</span>
+            </div>
+          </div>
+
+        <!-- ITEM 34: Promo Allianz Syariah CI Hasanah Bitesize 03 (Video: SP5oQsby9_g) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="shortform commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/SP5oQsby9_g?autoplay=1', 'Promo Allianz Syariah CI Hasanah Bitesize 03', 'Short-Form Reels · Allianz Syariah', true)">
+            <img 
+              src="https://img.youtube.com/vi/SP5oQsby9_g/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/SP5oQsby9_g/hqdefault.jpg'"
+              alt="Promo Allianz Syariah Bitesize 03 Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Short-Form Reels (9:16)
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Allianz Syariah</span>
+            </div>
+          </div>
+
+        <!-- ITEM 35: Promo Allianz Syariah CI Hasanah Bitesize 02 (Video: kJ9EIGhaxIs) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="shortform commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/kJ9EIGhaxIs?autoplay=1', 'Promo Allianz Syariah CI Hasanah Bitesize 02', 'Short-Form Reels · Allianz Syariah', true)">
+            <img 
+              src="https://img.youtube.com/vi/kJ9EIGhaxIs/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/kJ9EIGhaxIs/hqdefault.jpg'"
+              alt="Promo Allianz Syariah Bitesize 02 Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Short-Form Reels (9:16)
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Allianz Syariah</span>
+            </div>
+          </div>
+
+        <!-- ITEM 36: Promo Allianz Syariah CI Hasanah Bitesize 01 (Video: 5j45aeklTio) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="shortform commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/5j45aeklTio?autoplay=1', 'Promo Allianz Syariah CI Hasanah Bitesize 01', 'Short-Form Reels · Allianz Syariah', true)">
+            <img 
+              src="https://img.youtube.com/vi/5j45aeklTio/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/5j45aeklTio/hqdefault.jpg'"
+              alt="Promo Allianz Syariah Bitesize 01 Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Short-Form Reels (9:16)
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Allianz Syariah</span>
+            </div>
+          </div>
+
+        <!-- ITEM 37: Usia Ideal Baby Untuk Difoto (Video: btDDitI4908) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="shortform commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/btDDitI4908?autoplay=1', 'Usia Ideal Baby Untuk Difoto', 'Video Editor &amp; Motion · Magni Photo', false)">
+            <img 
+              src="https://img.youtube.com/vi/btDDitI4908/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/btDDitI4908/hqdefault.jpg'"
+              alt="Usia Ideal Baby Untuk Difoto Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Educational Content
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Magni Photo</span>
+            </div>
+          </div>
+
+        <!-- ITEM 38: Romantic Moments Wedding Day of Samuel & Sarah (Video: V_DQwyje3RM) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/V_DQwyje3RM?autoplay=1', 'Romantic Moments Wedding Day of Samuel &amp; Sarah by Magni Photo', 'Video Editor · Magni Photo', false)">
+            <img 
+              src="https://img.youtube.com/vi/V_DQwyje3RM/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/V_DQwyje3RM/hqdefault.jpg'"
+              alt="Samuel & Sarah Wedding Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Wedding Cinematic
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Magni Photo</span>
+            </div>
+          </div>
+
+        <!-- ITEM 39: Di Balik Layar Sesi Foto Bayi Louisse Scarlett (Video: sAPg4s6KPec) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="commercial shortform">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/sAPg4s6KPec?autoplay=1', 'Di Balik Layar Sesi Foto Bayi Louisse Scarlett Usia 3 Bulan Oleh Magni Photo', 'Video Editor · Magni Photo', false)">
+            <img 
+              src="https://img.youtube.com/vi/sAPg4s6KPec/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/sAPg4s6KPec/hqdefault.jpg'"
+              alt="Magni Photo Louisse Scarlett BTS Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Commercial &amp; BTS
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Magni Photo</span>
+            </div>
+          </div>
+
+        <!-- ITEM 40: Whyme (Video: sVvAdfOGPVU) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/sVvAdfOGPVU?autoplay=1', 'Whyme', 'Video Editor · Short Film Drama', false)">
+            <img 
+              src="https://img.youtube.com/vi/sVvAdfOGPVU/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/sVvAdfOGPVU/hqdefault.jpg'"
+              alt="Whyme Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Short Film / Drama
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Narrative Visual Drama</span>
+            </div>
+          </div>
+
+        <!-- ITEM 41: Twentytwo (Video: D6p_ntCSePc) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/D6p_ntCSePc?autoplay=1', 'Twentytwo', 'Video Editor · Cinematic Short Film', false)">
+            <img 
+              src="https://img.youtube.com/vi/D6p_ntCSePc/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/D6p_ntCSePc/hqdefault.jpg'"
+              alt="Twentytwo Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Cinematic / Short Film
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Short Film Project</span>
+            </div>
+          </div>
+
+        <!-- ITEM 42: Racikopi ( Dokumenter ) (Video: R1N_l4VZpOE) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/R1N_l4VZpOE?autoplay=1', 'Racikopi ( Dokumenter )', 'Video Editor &amp; Colorist · Documentary Film', false)">
+            <img 
+              src="https://img.youtube.com/vi/R1N_l4VZpOE/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/R1N_l4VZpOE/hqdefault.jpg'"
+              alt="Racikopi Dokumenter Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Documentary Film
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Documentary Film</span>
+            </div>
+          </div>
+
+        <!-- ITEM 43: Lebih Cerdas fiksi (Video: I6zcb4vMaMg) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/I6zcb4vMaMg?autoplay=1', 'Lebih Cerdas fiksi', 'Video Editor · Narrative Short Film', false)">
+            <img 
+              src="https://img.youtube.com/vi/I6zcb4vMaMg/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/I6zcb4vMaMg/hqdefault.jpg'"
+              alt="Lebih Cerdas fiksi Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Short Film / Narrative
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Narrative Short Film</span>
+            </div>
+          </div>
+
+        <!-- ITEM 44: Short Movie "Fantasya" (Video: vpU9j7Tqr3I) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/vpU9j7Tqr3I?autoplay=1', 'Short Movie &quot;Fantasya&quot;', 'Video Editor · Independent Short Film', false)">
+            <img 
+              src="https://img.youtube.com/vi/vpU9j7Tqr3I/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/vpU9j7Tqr3I/hqdefault.jpg'"
+              alt="Short Movie Fantasya Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Short Movie / Narrative
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Short Film Showcase</span>
+            </div>
+          </div>
+
+        <!-- ITEM 45: Somethinc Product Launch Campaign (Video: 9r1joyppEsQ) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="commercial motion">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/9r1joyppEsQ?autoplay=1', 'Somethinc Product Launch Campaign', 'Motion Graphic Designer · Aokay x Somethinc', false)">
+            <img 
+              src="https://img.youtube.com/vi/9r1joyppEsQ/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/9r1joyppEsQ/hqdefault.jpg'"
+              alt="Somethinc Product Launch Campaign Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Commercial Campaigns
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Aokay x Somethinc</span>
+            </div>
+          </div>
+
+        <!-- ITEM 46: Allianz Syariah (Video: ZDnJzST8_-M) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/ZDnJzST8_-M?autoplay=1', 'Allianz Syariah CI Hasanah Storytelling', 'Client: Buka Project x Allianz Syariah', false)">
+            <img 
+              src="https://img.youtube.com/vi/ZDnJzST8_-M/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/ZDnJzST8_-M/hqdefault.jpg'"
+              alt="Allianz Syariah Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Storytelling &amp; Color
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Allianz Syariah</span>
+            </div>
+          </div>
+
+        <!-- ITEM 47: Sosro Bagi-Bagi THR (Video: okn26ViUMEc) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="motion">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/okn26ViUMEc?autoplay=1', 'Sosro Bagi-Bagi THR Campaign', 'Client: Aokay x Sosro', false)">
+            <img 
+              src="https://img.youtube.com/vi/okn26ViUMEc/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/okn26ViUMEc/hqdefault.jpg'"
+              alt="Sosro Campaign Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Motion Graphics
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Aokay x Sosro</span>
+            </div>
+          </div>
+
+        <!-- ITEM 48: Somethinc Product Launch Campaign (Video: sXlq13K0FXM) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="commercial motion">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/sXlq13K0FXM?autoplay=1', 'Somethinc Product Launch Campaign', 'Client: Aokay x Somethinc', false)">
+            <img 
+              src="https://img.youtube.com/vi/sXlq13K0FXM/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/sXlq13K0FXM/hqdefault.jpg'"
+              alt="Somethinc Product Launch Campaign Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Commercial &amp; Motion Graphic
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Aokay x Somethinc</span>
+            </div>
+          </div>
+
+        <!-- ITEM 49: Somethinc Product Launch (Video: 2BPinzDZcdA) -->
+        <div class="portfolio-item group bg-mainBg rounded-2xl border border-borderSubtle overflow-hidden hover:border-lilacAccent hover:shadow-md transition-all duration-300" data-cat="commercial">
+          <div class="relative aspect-video bg-slate-900 overflow-hidden cursor-pointer" onclick="openLightbox('https://www.youtube.com/embed/2BPinzDZcdA?autoplay=1', 'Somethinc Product Launch Campaign', 'Client: Aokay x Somethinc', false)">
+            <img 
+              src="https://img.youtube.com/vi/2BPinzDZcdA/maxresdefault.jpg" 
+              onerror="this.src='https://img.youtube.com/vi/2BPinzDZcdA/hqdefault.jpg'"
+              alt="Somethinc Product Launch Video Frame" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-5">
+              <span class="self-start px-3 py-1 rounded-full bg-lilacSoft text-purpleDark text-xs font-bold tracking-wide">
+                Commercial Launch
+              </span>
+              <div class="w-12 h-12 rounded-full bg-white/90 text-purpleDark flex items-center justify-center self-center group-hover:scale-110 group-hover:bg-lilacSoft transition-transform duration-300 shadow-md">
+                <svg class="w-5 h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-xs text-white/90 font-medium self-end">Aokay x Somethinc</span>
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 4. WORK EXPERIENCE TIMELINE                -->
+  <!-- ========================================== -->
+  <section id="experience" class="py-20 bg-transparent">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold text-purpleDeep uppercase tracking-widest block mb-2">Work Experience</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-purpleDark tracking-tight">Pengalaman Kerja Profesional</h2>
+        <p class="text-sm text-charcoal/70 mt-2">Rekam jejak karier dari siaran televisi nasional hingga media digital dan fotografi.</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-6">
+        
+        <!-- Experience 1: RCTI+ -->
+        <div class="p-8 rounded-2xl bg-white border border-borderSubtle shadow-sm hover:border-lilacAccent transition-all duration-300">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-lilacSoft text-purpleDark text-[11px] font-bold mb-1.5">
+                August 2019 – Present (Current)
+              </div>
+              <h3 class="text-xl font-bold text-purpleDark">Video Editor &amp; Motion Graphic Designer</h3>
+              <p class="text-sm font-semibold text-purpleDeep">RCTI+</p>
+            </div>
+            <span class="text-xs text-charcoal/60 bg-slate-100 px-3 py-1 rounded-lg self-start sm:self-center font-medium">
+              Jakarta, Indonesia
+            </span>
+          </div>
+
+          <ul class="space-y-2.5 text-xs text-charcoal/85 leading-relaxed mt-4">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+              <span>Mengedit konten video promosi untuk platform digital termasuk <strong>Instagram, TikTok, YouTube, Facebook, dan X (Twitter)</strong>, dioptimalkan sesuai karakteristik audiens dan format setiap platform.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+              <span>Memproduksi materi promosi on-air dan off-air siaran nasional, meliputi filler, program promos, dan konten komersial.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+              <span>Membuat motion graphics untuk <strong>Station ID (SF), Commercial Running Text (RTK), dan TV Commercials (TVC)</strong>.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+              <span>Menyesuaikan format video, tempo (pacing), dan visual untuk memaksimalkan retensi serta keterlibatan penonton.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+              <span>Berkolaborasi dengan tim kreatif dan produksi dalam menyelesaikan materi promosi berstandar siar sesuai deadline ketat.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Experience 2: Matrix TV -->
+        <div class="p-8 rounded-2xl bg-white border border-borderSubtle shadow-sm hover:border-lilacAccent transition-all duration-300">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-mainBg text-charcoal/70 text-[11px] font-bold mb-1.5 border border-borderSubtle">
+                March 2018 – August 2019
+              </div>
+              <h3 class="text-xl font-bold text-purpleDark">Video Editor &amp; Motion Graphic Designer</h3>
+              <p class="text-sm font-semibold text-purpleDeep">Matrix TV</p>
+            </div>
+            <span class="text-xs text-charcoal/60 bg-slate-100 px-3 py-1 rounded-lg self-start sm:self-center font-medium">
+              Jakarta, Indonesia
+            </span>
+          </div>
+
+          <ul class="space-y-2.5 text-xs text-charcoal/85 leading-relaxed mt-4">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+              <span>Mengedit program hiburan <em>'Dingdangdut'</em> dengan visual flow yang memikat dan dynamic pacing.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+              <span>Menangani produksi video editing end-to-end dan motion graphics untuk segmen <strong>Matrix Home Shopping</strong>.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+              <span>Membuat konten broadcast yang fokus pada presentasi produk dan keterlibatan penonton dengan standar mutu siaran.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Experience 3: Magni Photography -->
+        <div class="p-8 rounded-2xl bg-white border border-borderSubtle shadow-sm hover:border-lilacAccent transition-all duration-300">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-mainBg text-charcoal/70 text-[11px] font-bold mb-1.5 border border-borderSubtle">
+                September 2017 – February 2018
+              </div>
+              <h3 class="text-xl font-bold text-purpleDark">Videografer &amp; Creative Designer</h3>
+              <p class="text-sm font-semibold text-purpleDeep">Magni Photography</p>
+            </div>
+          </div>
+
+          <ul class="space-y-2.5 text-xs text-charcoal/85 leading-relaxed mt-4">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+              <span>Merekam footage Behind-The-Scenes (BTS) saat sesi pemotretan dengan pendekatan storytelling visual.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+              <span>Mengedit konten YouTube untuk sesi foto family, newborn, maternity, dan children.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+              <span>Mendesain album foto dan aset promosi digital untuk memperkuat kehadiran brand di Instagram, Facebook, dan YouTube.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Subsection: PENGALAMAN FREELANCE & PROYEK (Dari CV Halaman 2) -->
+        <div class="pt-10 border-t border-borderSubtle">
+          <div class="text-center max-w-xl mx-auto mb-8">
+            <span class="text-xs font-bold text-purpleDeep uppercase tracking-widest block mb-1">Brand Campaigns &amp; Collaborations</span>
+            <h3 class="text-2xl font-extrabold text-purpleDark">Pengalaman Freelance &amp; Proyek</h3>
+            <p class="text-xs text-charcoal/70 mt-1">Kompilasi proyek kreatif independen untuk brand nasional, agensi terkemuka, dan peluncuran produk digital.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <!-- 1. Noice Product Feature Project -->
+            <div class="p-6 rounded-2xl bg-white border border-borderSubtle shadow-sm hover:border-lilacAccent hover:shadow-md transition-all duration-200">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-lilacSoft text-purpleDark text-[11px] font-bold">
+                  Motion Graphic Animator
+                </span>
+                <span class="text-[11px] font-semibold text-charcoal/60">Klien: Mejikuviniu x Noice</span>
+              </div>
+              <h4 class="text-base font-bold text-purpleDark mb-2">Noice Product Feature Project</h4>
+              <ul class="space-y-1.5 text-xs text-charcoal/85 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+                  <span>Membuat animasi motion graphic untuk konten promosi fitur produk.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+                  <span>Mengerjakan proses animasi dari awal hingga akhir, mulai dari perpindahan scene, motion composition, hingga hasil akhir yang siap tayang.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 2. Sosro bagi-bagi THR Campaign -->
+            <div class="p-6 rounded-2xl bg-white border border-borderSubtle shadow-sm hover:border-lilacAccent hover:shadow-md transition-all duration-200">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-lilacSoft text-purpleDark text-[11px] font-bold">
+                  Motion Graphic Designer
+                </span>
+                <span class="text-[11px] font-semibold text-charcoal/60">Klien: Aokay x Sosro</span>
+              </div>
+              <h4 class="text-base font-bold text-purpleDark mb-2">Sosro bagi-bagi THR Campaign</h4>
+              <ul class="space-y-1.5 text-xs text-charcoal/85 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+                  <span>Membuat motion graphic dan graphic visual asset untuk materi campaign promosi.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+                  <span>Mengelola animasi grafis dan penempatan suppers untuk konten siap tayang.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 3. Somethinc Product Launch Campaign -->
+            <div class="p-6 rounded-2xl bg-white border border-borderSubtle shadow-sm hover:border-lilacAccent hover:shadow-md transition-all duration-200">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-lilacSoft text-purpleDark text-[11px] font-bold">
+                  Motion Graphic Designer
+                </span>
+                <span class="text-[11px] font-semibold text-charcoal/60">Klien: Aokay x Somethinc</span>
+              </div>
+              <h4 class="text-base font-bold text-purpleDark mb-2">Somethinc Product Launch Campaign</h4>
+              <ul class="space-y-1.5 text-xs text-charcoal/85 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+                  <span>Membuat motion graphic content untuk campaign peluncuran produk dengan visual yang kuat.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+                  <span>Membuat penempatan subtitle, animasi suppers, dan tampilan visual untuk memperkuat daya tarik promosi.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 4. Sidomuncul Reels Campaign -->
+            <div class="p-6 rounded-2xl bg-white border border-borderSubtle shadow-sm hover:border-lilacAccent hover:shadow-md transition-all duration-200">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-lilacSoft text-purpleDark text-[11px] font-bold">
+                  Video Editor &amp; Motion Graphic Designer
+                </span>
+                <span class="text-[11px] font-semibold text-charcoal/60">Klien: Sidomuncul</span>
+              </div>
+              <h4 class="text-base font-bold text-purpleDark mb-2">Sidomuncul Reels Campaign</h4>
+              <ul class="space-y-1.5 text-xs text-charcoal/85 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+                  <span>Mengedit Short-Form video promosi menggunakan CapCut untuk distribusi digital dan media sosial.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+                  <span>Membuat suppers, visual effect, subtitle, dan motion graphics berbasis produk untuk meningkatkan engagement audiens.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 5. Japan Event Trip Project -->
+            <div class="p-6 rounded-2xl bg-white border border-borderSubtle shadow-sm hover:border-lilacAccent hover:shadow-md transition-all duration-200">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-lilacSoft text-purpleDark text-[11px] font-bold">
+                  Video Editor
+                </span>
+                <span class="text-[11px] font-semibold text-charcoal/60">Klien: Jalankan Media x Jafra</span>
+              </div>
+              <h4 class="text-base font-bold text-purpleDark mb-2">Japan Event Trip Project</h4>
+              <ul class="space-y-1.5 text-xs text-charcoal/85 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+                  <span>Mengedit dan menyusun video menjadi konten cerita yang menarik untuk promosi acara.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+                  <span>Mengatur urutan video, alur, dan tampilan akhir untuk keperluan promosi acara.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 6. Allianz Syariah CI Hasanah -->
+            <div class="p-6 rounded-2xl bg-white border border-borderSubtle shadow-sm hover:border-lilacAccent hover:shadow-md transition-all duration-200">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-lilacSoft text-purpleDark text-[11px] font-bold">
+                  Video Editor
+                </span>
+                <span class="text-[11px] font-semibold text-charcoal/60">Klien: Buka Project x Allianz Syariah</span>
+              </div>
+              <h4 class="text-base font-bold text-purpleDark mb-2">Allianz Syariah CI Hasanah</h4>
+              <ul class="space-y-1.5 text-xs text-charcoal/85 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+                  <span>Mengedit dan menyusun video menjadi konten cerita yang menarik dan profesional.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+                  <span>Mengatur urutan video multi-camera, alur, dan pewarnaan (color grading).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purpleDeep mt-1.5 shrink-0"></span>
+                  <span>Membuat penempatan subtitle dan animasi teks untuk memperkuat visual.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 5. CORE SKILLS & SOFTWARE STACK            -->
+  <!-- ========================================== -->
+  <section id="skills" class="py-20 bg-white/60 backdrop-blur-xs border-t border-borderSubtle">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold text-purpleDeep uppercase tracking-widest block mb-2">Competencies from CV</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-purpleDark tracking-tight">Core Skills &amp; Software</h2>
+        <p class="text-sm text-charcoal/70 mt-2">Daftar lengkap 12 keahlian utama dan toolset perangkat lunak profesional dari CV Auliana Miendy.</p>
+      </div>
+
+      <!-- 12 Core Skills Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-14">
+        
+        <div class="p-5 rounded-2xl bg-white border border-borderSubtle">
+          <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center mb-3 font-bold text-sm">01</div>
+          <h4 class="text-sm font-bold text-purpleDark">Video Editing</h4>
+          <p class="text-[11px] text-charcoal/70 mt-1">Multi-camera editing, pacing, dan narrative flow.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-borderSubtle">
+          <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center mb-3 font-bold text-sm">02</div>
+          <h4 class="text-sm font-bold text-purpleDark">Motion Graphics &amp; Animation</h4>
+          <p class="text-[11px] text-charcoal/70 mt-1">Station ID, TVC, title design, animated supers.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-borderSubtle">
+          <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center mb-3 font-bold text-sm">03</div>
+          <h4 class="text-sm font-bold text-purpleDark">Visual Storytelling</h4>
+          <p class="text-[11px] text-charcoal/70 mt-1">Struktur cerita emosional dan retensi penonton.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-borderSubtle">
+          <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center mb-3 font-bold text-sm">04</div>
+          <h4 class="text-sm font-bold text-purpleDark">Color Grading</h4>
+          <p class="text-[11px] text-charcoal/70 mt-1">Koreksi warna primer/sekunder dan look sinematik.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-borderSubtle">
+          <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center mb-3 font-bold text-sm">05</div>
+          <h4 class="text-sm font-bold text-purpleDark">Audio Sync &amp; SFX Editing</h4>
+          <p class="text-[11px] text-charcoal/70 mt-1">Penyelarasan audio multi-track, sound effect, leveling.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-borderSubtle">
+          <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center mb-3 font-bold text-sm">06</div>
+          <h4 class="text-sm font-bold text-purpleDark">Graphic Design</h4>
+          <p class="text-[11px] text-charcoal/70 mt-1">Aset visual, poster, cover, dan elemen grafis.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-borderSubtle">
+          <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center mb-3 font-bold text-sm">07</div>
+          <h4 class="text-sm font-bold text-purpleDark">Social Media Content Editing</h4>
+          <p class="text-[11px] text-charcoal/70 mt-1">Format Instagram, TikTok, YouTube Shorts, X.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-borderSubtle">
+          <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center mb-3 font-bold text-sm">08</div>
+          <h4 class="text-sm font-bold text-purpleDark">Broadcast Promotion</h4>
+          <p class="text-[11px] text-charcoal/70 mt-1">On-Air &amp; Off-Air fillers, promo program TV.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-borderSubtle">
+          <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center mb-3 font-bold text-sm">09</div>
+          <h4 class="text-sm font-bold text-purpleDark">Photography &amp; Videography</h4>
+          <p class="text-[11px] text-charcoal/70 mt-1">Dokumentasi BTS, framing, dan komposisi kamera.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-borderSubtle">
+          <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center mb-3 font-bold text-sm">10</div>
+          <h4 class="text-sm font-bold text-purpleDark">Creative Campaign Production</h4>
+          <p class="text-[11px] text-charcoal/70 mt-1">Produksi materi peluncuran produk dan brand.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-borderSubtle">
+          <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center mb-3 font-bold text-sm">11</div>
+          <h4 class="text-sm font-bold text-purpleDark">Content Optimization</h4>
+          <p class="text-[11px] text-charcoal/70 mt-1">Optimalisasi retensi penonton dan rasio format.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white border border-borderSubtle">
+          <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center mb-3 font-bold text-sm">12</div>
+          <h4 class="text-sm font-bold text-purpleDark">Multi-Project Management</h4>
+          <p class="text-[11px] text-charcoal/70 mt-1">Manajemen deadline di lingkungan broadcast cepat.</p>
+        </div>
+
+      </div>
+
+      <!-- Software Stack dari CV -->
+      <div class="bg-[#3C1361] p-8 md:p-10 rounded-3xl border border-[#52257d] shadow-md text-center">
+        <h3 class="text-center text-xs font-bold text-white uppercase tracking-widest mb-6">Software Stack dari CV</h3>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <div class="flex flex-col items-center justify-center text-center px-6 py-4 rounded-2xl bg-[#4A2E80] border border-[#5F3B9E] hover:border-[#C8ACD6] hover:bg-[#543091] transition-all duration-200 shadow-sm min-w-[210px]">
+            <div class="flex items-center gap-2 mb-1 justify-center">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#00F2FE] shrink-0"></span>
+              <span class="text-xs font-bold text-white">CapCut</span>
+            </div>
+            <span class="text-[11px] text-[#E8D8F4] font-normal leading-tight">Fast-Paced Social Reels &amp; TikTok</span>
+          </div>
+          <div class="flex flex-col items-center justify-center text-center px-6 py-4 rounded-2xl bg-[#4A2E80] border border-[#5F3B9E] hover:border-[#C8ACD6] hover:bg-[#543091] transition-all duration-200 shadow-sm min-w-[210px]">
+            <div class="flex items-center gap-2 mb-1 justify-center">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#9999FF] shrink-0"></span>
+              <span class="text-xs font-bold text-white">Adobe Premiere Pro</span>
+            </div>
+            <span class="text-[11px] text-[#E8D8F4] font-normal leading-tight">Primary NLE Timeline</span>
+          </div>
+          <div class="flex flex-col items-center justify-center text-center px-6 py-4 rounded-2xl bg-[#4A2E80] border border-[#5F3B9E] hover:border-[#C8ACD6] hover:bg-[#543091] transition-all duration-200 shadow-sm min-w-[210px]">
+            <div class="flex items-center gap-2 mb-1 justify-center">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#C8ACD6] shrink-0"></span>
+              <span class="text-xs font-bold text-white">Adobe After Effects</span>
+            </div>
+            <span class="text-[11px] text-[#E8D8F4] font-normal leading-tight">Motion Graphics &amp; Compositing</span>
+          </div>
+          <div class="flex flex-col items-center justify-center text-center px-6 py-4 rounded-2xl bg-[#4A2E80] border border-[#5F3B9E] hover:border-[#C8ACD6] hover:bg-[#543091] transition-all duration-200 shadow-sm min-w-[210px]">
+            <div class="flex items-center gap-2 mb-1 justify-center">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#31A8FF] shrink-0"></span>
+              <span class="text-xs font-bold text-white">Adobe Photoshop</span>
+            </div>
+            <span class="text-[11px] text-[#E8D8F4] font-normal leading-tight">Visual Assets &amp; Thumbnails</span>
+          </div>
+          <div class="flex flex-col items-center justify-center text-center px-6 py-4 rounded-2xl bg-[#4A2E80] border border-[#5F3B9E] hover:border-[#C8ACD6] hover:bg-[#543091] transition-all duration-200 shadow-sm min-w-[210px]">
+            <div class="flex items-center gap-2 mb-1 justify-center">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#FF9A00] shrink-0"></span>
+              <span class="text-xs font-bold text-white">Adobe Illustrator</span>
+            </div>
+            <span class="text-[11px] text-[#E8D8F4] font-normal leading-tight">Vector Assets &amp; Brand Graphics</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 7. EDUCATION & CREDENTIALS                 -->
+  <!-- ========================================== -->
+  <section class="py-16 bg-white border-b border-borderSubtle">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold text-purpleDeep uppercase tracking-widest block mb-1">Academic Background</span>
+        <h3 class="text-2xl font-bold text-purpleDark">Education</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="p-6 rounded-2xl bg-mainBg border border-borderSubtle">
+          <span class="text-xs font-semibold text-purpleDeep block mb-1">Applied Bachelor's Degree (D4)</span>
+          <h4 class="text-base font-bold text-purpleDark">Institut Seni Budaya Indonesia (ISBI), Bandung</h4>
+          <p class="text-xs text-charcoal/80 mt-1 font-semibold">Sarjana Terapan (D4) — Televisi &amp; Film</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-mainBg border border-borderSubtle">
+          <span class="text-xs font-semibold text-purpleDeep block mb-1">Vocational High School</span>
+          <h4 class="text-base font-bold text-purpleDark">SMK Negeri 1 Sukabumi</h4>
+          <p class="text-xs text-charcoal/80 mt-1 font-semibold">Teknik Produksi dan Penyiaran Program Pertelevisian (TP4)</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 7.5 CLIENT BRANDS & COLLABORATIONS         -->
+  <!-- ========================================== -->
+  <section class="py-10 bg-[#24133A] border-y border-[#3A1F5E]">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-center text-xs font-bold text-amber-400 uppercase tracking-widest mb-5">
+        Dipercaya oleh Stasiun TV, Agensi, &amp; Brand Terkemuka
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-7 md:gap-x-9 gap-y-2.5 text-sm sm:text-base font-extrabold text-white tracking-wider">
+        <span class="hover:text-amber-300 transition-colors">RCTI+</span>
+        <span class="text-amber-400/70 select-none">·</span>
+        <span class="hover:text-amber-300 transition-colors">MATRIX TV</span>
+        <span class="text-amber-400/70 select-none">·</span>
+        <span class="hover:text-amber-300 transition-colors">SOSRO</span>
+        <span class="text-amber-400/70 select-none">·</span>
+        <span class="hover:text-amber-300 transition-colors">SOMETHINC</span>
+        <span class="text-amber-400/70 select-none">·</span>
+        <span class="hover:text-amber-300 transition-colors">SIDOMUNCUL</span>
+        <span class="text-amber-400/70 select-none">·</span>
+        <span class="hover:text-amber-300 transition-colors">NOICE</span>
+        <span class="text-amber-400/70 select-none">·</span>
+        <span class="hover:text-amber-300 transition-colors">ALLIANZ SYARIAH</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 8. CONTACT & SOCIALS                       -->
+  <!-- ========================================== -->
+  <section id="contact" class="py-20 bg-transparent">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Info Kontak Asli dari CV -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs font-bold text-purpleDeep uppercase tracking-widest block">Get in Touch</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-purpleDark tracking-tight">
+            Mari Diskusikan Proyek Video Anda
+          </h2>
+          <p class="text-sm text-charcoal/80 leading-relaxed">
+            Terbuka untuk freelance projects, remote work, serta kolaborasi produksi broadcast maupun campaign digital.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <!-- Email Asli -->
+            <a href="mailto:aulianamiendy.work@gmail.com" class="flex items-center gap-3 text-sm text-charcoal/90 hover:text-purpleDeep transition-colors group p-3 rounded-2xl bg-mainBg border border-borderSubtle">
+              <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center group-hover:bg-purpleDeep group-hover:text-white transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <p class="text-xs text-charcoal/60">Work Email</p>
+                <p class="font-semibold text-purpleDark">aulianamiendy.work@gmail.com</p>
+              </div>
+            </a>
+
+            <!-- WhatsApp Asli -->
+            <a href="https://wa.me/6285155456538" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-sm text-charcoal/90 hover:text-purpleDeep transition-colors group p-3 rounded-2xl bg-mainBg border border-borderSubtle">
+              <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center group-hover:bg-purpleDeep group-hover:text-white transition-colors">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.302c-.086.087-.176.182-.075.355.101.173.45 0.742.965 1.201.662.591 1.221.774 1.394.861.173.086.275.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+              </div>
+              <div>
+                <p class="text-xs text-charcoal/60">WhatsApp / Phone</p>
+                <p class="font-semibold text-purpleDark">+62 851-5545-6538</p>
+              </div>
+            </a>
+
+            <!-- LinkedIn Asli -->
+            <a href="https://linkedin.com/in/aulianamiendy" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-sm text-charcoal/90 hover:text-purpleDeep transition-colors group p-3 rounded-2xl bg-mainBg border border-borderSubtle">
+              <div class="w-10 h-10 rounded-xl bg-lilacSoft text-purpleDeep flex items-center justify-center group-hover:bg-purpleDeep group-hover:text-white transition-colors">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </div>
+              <div>
+                <p class="text-xs text-charcoal/60">LinkedIn Profile</p>
+                <p class="font-semibold text-purpleDark">linkedin.com/in/aulianamiendy</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Download CV PDF Button -->
+          <div class="pt-2">
+            <a href="/assets/aistudio/Auliana_Miendy_CV_Final_e84e794f.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-purpleDeep text-white text-xs font-bold hover:bg-purpleDark transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <span>Download Official CV (PDF)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form Kontak Interaktif -->
+        <div class="lg:col-span-7">
+          <div class="bg-mainBg p-8 rounded-3xl border border-borderSubtle shadow-sm">
+            <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-xs font-bold text-purpleDark mb-1.5" for="name">Nama Lengkap / Perusahaan *</label>
+                  <input type="text" id="name" required placeholder="e.g. Budi Santoso / Brand" class="w-full px-4 py-3 rounded-xl bg-white border border-borderSubtle text-sm text-charcoal focus:outline-none focus:border-purpleDeep focus:ring-1 focus:ring-purpleDeep transition-colors"/>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-purpleDark mb-1.5" for="email">Alamat Email *</label>
+                  <input type="email" id="email" required placeholder="budi@company.com" class="w-full px-4 py-3 rounded-xl bg-white border border-borderSubtle text-sm text-charcoal focus:outline-none focus:border-purpleDeep focus:ring-1 focus:ring-purpleDeep transition-colors"/>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-purpleDark mb-1.5" for="projectType">Kebutuhan Proyek</label>
+                <select id="projectType" class="w-full px-4 py-3 rounded-xl bg-white border border-borderSubtle text-sm text-charcoal focus:outline-none focus:border-purpleDeep focus:ring-1 focus:ring-purpleDeep transition-colors">
+                  <option value="Social Media & Reels Campaign">Social Media &amp; Reels Campaign (Short-form)</option>
+                  <option value="Broadcast Promo & Commercial TVC">Broadcast Promo &amp; Commercial TVC</option>
+                  <option value="Motion Graphics & Animated Supers">Motion Graphics &amp; Animated Supers</option>
+                  <option value="Corporate / Event Storytelling Video">Corporate / Event Storytelling Video</option>
+                  <option value="Freelance Contract / Full-Time Role">Freelance Contract / Full-Time Role</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-purpleDark mb-1.5" for="message">Deskripsi Proyek &amp; Target Jadwal *</label>
+                <textarea id="message" required rows="4" placeholder="Jelaskan kebutuhan video, referensi visual, dan target deadline..." class="w-full px-4 py-3 rounded-xl bg-white border border-borderSubtle text-sm text-charcoal focus:outline-none focus:border-purpleDeep focus:ring-1 focus:ring-purpleDeep transition-colors resize-none"></textarea>
+              </div>
+
+              <button type="submit" id="submitBtn" class="w-full py-3.5 px-6 rounded-xl bg-[#3C1361] hover:bg-[#2A0845] text-white text-sm font-bold tracking-wide transition-all duration-200 shadow-sm hover:shadow active:scale-[0.99] flex items-center justify-center gap-2">
+                <span>Kirim Pesan ke Auliana</span>
+                <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </button>
+
+              <div id="formSuccessAlert" class="hidden p-4 rounded-xl bg-lilacSoft/80 border border-lilacAccent text-purpleDark text-xs font-semibold text-center">
+                Pesan Anda berhasil dikirim! Auliana akan menghubungi via email / WhatsApp dalam waktu 1x24 jam.
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 9. FOOTER                                  -->
+  <!-- ========================================== -->
+  <footer class="bg-mainBg border-t border-borderSubtle py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-charcoal/60">
+      
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-lilacAccent"></span>
+        <span>&copy; <span id="currentYear"></span> <strong>Auliana Miendy</strong>. All rights reserved.</span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="/assets/aistudio/Auliana_Miendy_CV_Final_e84e794f.pdf" target="_blank" class="hover:text-purpleDeep transition-colors">Download CV PDF</a>
+        <a href="#home" class="hover:text-purpleDeep transition-colors">Back to Top &uarr;</a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ========================================== -->
+  <!-- 10. LIGHTBOX MODAL                         -->
+  <!-- ========================================== -->
+  <div id="videoLightbox" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6" onclick="closeLightboxOnBackdrop(event)">
+    <div id="modalBox" class="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10 modal-enter transition-all duration-300" onclick="event.stopPropagation()">
+      
+      <div class="flex items-center justify-between px-6 py-4 bg-purpleDark text-white border-b border-white/10">
+        <div>
+          <h3 id="modalTitle" class="text-sm font-bold tracking-tight text-white leading-tight">Video Title</h3>
+          <p id="modalCategory" class="text-xs text-lilacSoft mt-0.5">Category</p>
+        </div>
+        <button onclick="closeLightbox()" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors text-lg" aria-label="Close modal">
+          &times;
+        </button>
+      </div>
+
+      <div id="modalVideoContainer" class="relative aspect-video w-full bg-black transition-all duration-300">
+        <iframe 
+          id="modalIframe" 
+          class="w-full h-full" 
+          src="" 
+          title="Video Player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="px-6 py-3 bg-purpleDark/90 text-lilacSoft text-xs flex items-center justify-between">
+        <span>Tekan tombol ESC atau klik di luar untuk menutup</span>
+        <button onclick="closeLightbox()" class="text-white hover:underline font-semibold">Tutup Player</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- 11. JAVASCRIPT LOGIC                       -->
+  <!-- ========================================== -->
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    let currentCategory = 'all';
+    let currentSearchQuery = '';
+
+    function filterPortfolio(category) {
+      currentCategory = category;
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-category') === category) {
+          btn.classList.add('bg-white', 'text-purpleDark', 'shadow-sm', 'font-bold');
+          btn.classList.remove('text-charcoal/70');
+        } else {
+          btn.classList.remove('bg-white', 'text-purpleDark', 'shadow-sm', 'font-bold');
+          btn.classList.add('text-charcoal/70');
+        }
+      });
+      applyPortfolioFilter();
+    }
+
+    function handlePortfolioSearch() {
+      const input = document.getElementById('portfolioSearchInput');
+      const clearBtn = document.getElementById('clearSearchBtn');
+      currentSearchQuery = input.value.trim().toLowerCase();
+      if (currentSearchQuery) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+      applyPortfolioFilter();
+    }
+
+    function clearPortfolioSearch() {
+      const input = document.getElementById('portfolioSearchInput');
+      input.value = '';
+      currentSearchQuery = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      applyPortfolioFilter();
+    }
+
+    function setSearchKeyword(kw) {
+      const input = document.getElementById('portfolioSearchInput');
+      if (input.value.trim().toLowerCase() === kw.toLowerCase()) {
+        clearPortfolioSearch();
+      } else {
+        input.value = kw;
+        handlePortfolioSearch();
+      }
+    }
+
+    function applyPortfolioFilter() {
+      const items = document.querySelectorAll('.portfolio-item');
+      let visibleCount = 0;
+      items.forEach(item => {
+        const itemCat = item.getAttribute('data-cat') || '';
+        const cats = itemCat.split(' ');
+        const matchesCategory = currentCategory === 'all' || cats.includes(currentCategory);
+        
+        const textContent = item.textContent.toLowerCase();
+        const matchesQuery = !currentSearchQuery || textContent.includes(currentSearchQuery);
+
+        if (matchesCategory && matchesQuery) {
+          item.style.display = 'block';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      const countBox = document.getElementById('searchResultsCount');
+      if (currentSearchQuery) {
+        countBox.textContent = `Hasil: ${visibleCount} proyek`;
+        countBox.classList.remove('hidden');
+      } else {
+        countBox.classList.add('hidden');
+      }
+    }
+
+    const videoLightbox = document.getElementById('videoLightbox');
+    const modalBox = document.getElementById('modalBox');
+    const modalVideoContainer = document.getElementById('modalVideoContainer');
+    const modalIframe = document.getElementById('modalIframe');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalCategory = document.getElementById('modalCategory');
+
+    function openLightbox(videoUrl, title, category, isVertical = false) {
+      modalIframe.src = videoUrl;
+      modalTitle.textContent = title;
+      modalCategory.textContent = category;
+
+      if (isVertical || videoUrl.includes('RRlB66IoxQk') || videoUrl.includes('shorts')) {
+        modalBox.className = 'relative w-full max-w-sm sm:max-w-md bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10 modal-enter mx-auto transition-all duration-300';
+        modalVideoContainer.className = 'relative aspect-[9/16] max-h-[75vh] w-full bg-black mx-auto transition-all duration-300';
+      } else {
+        modalBox.className = 'relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10 modal-enter transition-all duration-300';
+        modalVideoContainer.className = 'relative aspect-video w-full bg-black transition-all duration-300';
+      }
+
+      videoLightbox.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      videoLightbox.classList.add('hidden');
+      modalIframe.src = '';
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeLightboxOnBackdrop(e) {
+      if (e.target === videoLightbox) {
+        closeLightbox();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !videoLightbox.classList.contains('hidden')) {
+        closeLightbox();
+      }
+    });
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submitBtn');
+      const alertBox = document.getElementById('formSuccessAlert');
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Mengirimkan Pesan...</span>';
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>Kirim Pesan ke Auliana</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>';
+        alertBox.classList.remove('hidden');
+        document.getElementById('contactForm').reset();
+
+        setTimeout(() => {
+          alertBox.classList.add('hidden');
+        }, 6000);
+      }, 1000);
+    }
+
+    // Scroll-triggered reveals via Intersection Observer for Experience and Skills/Services
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      // Target section headers, experience cards, and skill badges
+      const revealTargets = document.querySelectorAll(`
+        #experience .text-center,
+        #experience .space-y-6 > div,
+        #experience .grid > div,
+        #skills .text-center,
+        #skills .grid > div,
+        #skills .bg-purpleDark
+      `);
+
+      revealTargets.forEach(el => {
+        el.classList.add('reveal-scroll');
+        revealObserver.observe(el);
+      });
+    }
+
+    // Subtle 3D Tilt Effect on Portfolio Cards
+    document.querySelectorAll('.portfolio-item').forEach(card => {
+      card.style.transformStyle = 'preserve-3d';
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(1000px) rotateX(${y * -9}deg) rotateY(${x * 9}deg) translateY(-6px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  </script>
+
+</body>
+</html>
